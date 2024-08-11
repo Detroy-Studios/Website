@@ -1,0 +1,47 @@
+body {
+  background: linear-gradient(to right, #141E30, #243B55);
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.animation-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Fixed height for centering */
+}
+
+.pulse-animation {
+  width: 100px;
+  height: 100px;
+  background: #ffffff;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.pulse-animation:hover {
+  transform: scale(1.1); /* Scale up on hover */
+}
+
+.coming-soon {
+  margin-top: 20px;
+  transition: color 0.3s ease; /* Smooth color change */
+}
+
+.coming-soon:hover {
+  color: #ffcc00; /* Change color on hover */
+}
+
+.notification {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #ffcc00; /* Notification color */
+  transition: opacity 0.5s ease;
+  opacity: 0; /* Initially hidden */
+}
