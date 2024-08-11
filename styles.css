@@ -1,41 +1,41 @@
 body {
-  background: linear-gradient(to right, #141E30, #243B55);
+  background: #000000; /* Set background to solid black */
   font-family: 'Montserrat', sans-serif;
   color: #fff;
+  overflow: hidden; /* Prevent overflow from particles */
+  user-select: none; /* Prevent text selection */
+}
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Send particles to the back */
+}
+
+.container {
+  position: relative;
+  z-index: 1; /* Ensure content is on top of particles */
+  pointer-events: none; /* Disable pointer events for everything in the container */
+}
+
+h1, .coming-soon, .notification {
+  pointer-events: none; /* Disable pointer events for text */
+}
+
+button {
+  pointer-events: auto; /* Enable pointer events for buttons */
 }
 
 h1 {
   margin-bottom: 20px;
 }
 
-.animation-container {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px; /* Fixed height for centering */
-}
-
-.pulse-animation {
-  width: 100px;
-  height: 100px;
-  background: #ffffff;
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-  transition: transform 0.3s ease; /* Smooth transition for scaling */
-}
-
-.pulse-animation:hover {
-  transform: scale(1.1); /* Scale up on hover */
-}
-
 .coming-soon {
   margin-top: 20px;
   transition: color 0.3s ease; /* Smooth color change */
-}
-
-.coming-soon:hover {
-  color: #ffcc00; /* Change color on hover */
 }
 
 .notification {
