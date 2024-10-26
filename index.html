@@ -3,72 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Troy Studios</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Planetary Delivery Boys</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="particles-js"></div>
-    
-    <div class="container text-center vh-100 d-flex flex-column justify-content-center">
-        <h1 class="display-4">Detroy Studios</h1>
-        <p class="lead coming-soon">Games Coming Soon</p>
-        <button class="btn btn-outline-light mt-4" id="notify-btn" data-toggle="modal" data-target="#emailModal">Notify Me</button>
-    </div>
+<!-- Header -->
+<header class="header">
+    <a href="#home"><img src="logo.png" alt="Planetary Delivery Boys Logo" class="logo"></a>
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#game">Planetary Delivery Boys</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#support">Support</a>
+    </nav>
+</header>
 
-    <!-- Modal for Email Notification -->
-    <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="emailModalLabel">Join Our Email List!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Enter your email address to be added to our list and be notified when our exciting games are ready:</p>
-                    <input type="email" class="form-control" id="emailInput" placeholder="Your Email" required>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="submitEmail">Submit</button>
-                </div>
+<!-- Main Content -->
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="logo.png" alt="Planetary Delivery Boys Logo" class="hero-logo">
+            <p>Embark on cosmic delivery adventures across the galaxy!</p>
+            <div class="buttons">
+                <button class="button">Learn More</button>
+                <button class="button">Watch Trailer</button>
             </div>
         </div>
+    </section>
+
+    <!-- Info Cards -->
+    <section class="info-cards">
+        <div class="card">
+            <h2>Galactic Deliveries</h2>
+            <p>Explore missions across exotic planets and deliver valuable cargo.</p>
+        </div>
+        <div class="card">
+            <h2>Meet the Team</h2>
+            <p>Get to know the crew that will help you on your galactic journey.</p>
+        </div>
+        <div class="card">
+            <h2>Horror</h2>
+            <p>Experience the fear and defeat the enemies with your friends.</p>
+        </div>
+    </section>
+
+    <!-- Call to Action for Steam Wishlist -->
+    <section class="cta-steam">
+        <p>Excited to play? Wishlist <strong>Planetary Delivery Boys</strong> on Steam and be the first to know when it launches!</p>
+        <a href="https://store.steampowered.com" target="_blank" class="cta-button">Wishlist on Steam</a>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="logo.png" alt="Planetary Delivery Boys Logo">
+        </div>
+        <nav class="footer-nav">
+            <a href="#home">Home</a>
+            <a href="#game">Planetary Delivery Boys</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#support">Support</a>
+        </nav>
+        <div class="social-media">
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
     </div>
-
-    <div class="notification" id="notification" style="display: none;">You will be notified when the games are ready!</div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
-    
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS.load('particles-js', 'particles.json', function() {
-            console.log('callback - particles.js config loaded');
-        });
-
-        // JavaScript for handling email submission
-        document.getElementById('submitEmail').addEventListener('click', function() {
-            const emailInput = document.getElementById('emailInput');
-            const notification = document.getElementById('notification');
-            if (emailInput.value) {
-                // Here you can handle the email submission logic (e.g., send to a server)
-                // For demo purposes, we'll just show a notification
-                notification.style.display = 'block';
-                notification.innerText = 'You will be notified when the games are ready!';
-                $('#emailModal').modal('hide'); // Hide the modal
-                emailInput.value = ''; // Clear the input
-            } else {
-                alert('Please enter a valid email address.');
-            }
-        });
-    </script>
+</footer>
 </body>
 </html>
