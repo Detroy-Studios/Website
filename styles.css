@@ -1,4 +1,11 @@
 /* style.css */
+/* Import custom font */
+@font-face {
+  font-family: 'DetroyFont';
+  src: url('detroy-font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 * {
   margin: 0;
@@ -23,7 +30,13 @@ body {
   backdrop-filter: blur(5px);
   z-index: 10;
 }
-
+.company-logo{
+  font-family: 'DetroyFont', Arial, sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
 .logo{
   font-size: 1.5em;
   font-weight: bold;
@@ -61,7 +74,7 @@ body {
   margin-bottom: 1em;
 }
 
-.hero-content .buttons button {
+.buttons button {
   margin: 0.5em;
   padding: 0.8em 1.2em;
   font-size: 1em;
@@ -167,7 +180,7 @@ body {
 }
 
 .hero-logo {
-  height: 150px;      /* Adjust height to make it as large as needed */
+  height: 350px;      /* Adjust height to make it as large as needed */
   width: auto;        /* Maintain aspect ratio */
   object-fit: contain;
 }
