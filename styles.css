@@ -1,4 +1,4 @@
-/* style.css */
+/* styles.css */
 /* Import custom font */
 @font-face {
   font-family: 'DetroyFont';
@@ -19,59 +19,37 @@ body {
   background-color: #121212;
 }
 
-.header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em 2em;
-  position: sticky;
-  top: 0;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
-  z-index: 10;
-}
-.company-logo{
+.company-logo {
   font-family: 'DetroyFont', Arial, sans-serif;
   font-size: 1.5em;
   font-weight: bold;
   color: #ffffff;
   text-decoration: none;
 }
-.logo{
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #ffeb3b;
-}
-
-.navbar a{
-  margin: 0 10px;
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.navbar a:hover{
-  color: #ffeb3b;
-}
 
 .hero {
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  background: url('hero-bg.jpg') center/cover no-repeat;
+  background: url('hero-bg.jpg') center center / cover no-repeat;
   color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.hero-content h1 {
-  font-size: 3em;
-  margin-bottom: 0.5em;
+.hero-content {
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.hero-content p {
-  font-size: 1.2em;
-  margin-bottom: 1em;
+.hero-logo {
+  height: 250px;
+  width: auto;
+  object-fit: contain;
 }
 
 .buttons button {
@@ -84,15 +62,18 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
-.hero-content .buttons button:hover {
+
+.buttons button:hover {
   background: #ffffff;
   color: #121212;
 }
 
 .info-cards {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   padding: 2em;
+  gap: 1em;
 }
 
 .card {
@@ -101,8 +82,10 @@ body {
   margin: 1em;
   border-radius: 10px;
   width: 30%;
+  min-width: 250px;
   text-align: center;
-}/* CTA for Steam Wishlist */
+}
+
 .cta-steam {
   text-align: center;
   padding: 4em 2em;
@@ -116,7 +99,6 @@ body {
   justify-content: center;
 }
 
-/* Dark overlay to ensure readability */
 .cta-steam::before {
   content: '';
   position: absolute;
@@ -124,14 +106,13 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
-/* Content inside CTA Steam Section */
 .cta-steam p, .cta-button {
   position: relative;
-  z-index: 2; /* Bring content above overlay */
+  z-index: 2;
 }
 
 .cta-steam p {
@@ -159,33 +140,19 @@ body {
   color: #121212;
 }
 
-
-.footer {
-  padding: 2em;
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
-}
-
 .social-media a {
   margin: 0 10px;
   color: #ffeb3b;
   text-decoration: none;
 }
-/* Logo Image */
+
 .logo {
-  height: 50px;            /* Set the desired height */
-  width: auto;             /* Maintain aspect ratio */
-  object-fit: contain;     /* Ensures the entire logo is visible */
-  cursor: pointer;         /* Adds a pointer cursor */
-}
-
-.hero-logo {
-  height: 350px;      /* Adjust height to make it as large as needed */
-  width: auto;        /* Maintain aspect ratio */
+  height: 50px;
+  width: auto;
   object-fit: contain;
+  cursor: pointer;
 }
 
-/* Footer Styling */
 .footer {
   background: #1a1a1a;
   padding: 2em 0;
@@ -198,11 +165,6 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-}
-
-.footer-logo img {
-  height: 60px;
-  margin-bottom: 1em;
 }
 
 .footer-nav, .social-media {
@@ -219,4 +181,53 @@ body {
 
 .footer-nav a:hover, .social-media a:hover {
   color: #ffeb3b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .info-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+  }
+
+  .hero-content {
+    padding: 1em;
+  }
+
+  .hero-logo {
+    height: 200px;
+  }
+
+  .cta-steam {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 0.5em;
+  }
+
+  .hero-logo {
+    height: 150px;
+  }
+
+  .cta-steam {
+    padding: 2em 1em;
+    font-size: 1em;
+  }
+
+  .cta-button {
+    font-size: 1em;
+    padding: 0.7em 1.2em;
+  }
+
+  .buttons button {
+    padding: 0.6em 1em;
+    font-size: 0.9em;
+  }
 }
