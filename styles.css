@@ -98,7 +98,29 @@ body {
   align-items: center;
   justify-content: center;
 }
+.cta-steam h1 {
+  text-align: center;
+  padding: .5em 1em;
+  color: #fff;
+  font-size: 2.5em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+.cta-steam h2 {
+  text-align: center;
+  padding: .5em 2em;
+  color: #fff;
+  font-size: 2em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .cta-steam::before {
   content: '';
   position: absolute;
