@@ -426,7 +426,7 @@ body {
 }
 
 .tagline {
-  font-size: clamp(1.6em, 5vw, 2.6em);
+  font-size: clamp(2.5em, 8vw, 4em);
   font-weight: 800;
   margin-bottom: 0.3em;
   color: var(--accent);
@@ -439,7 +439,7 @@ body {
 .game-subtitle {
   font-size: clamp(1em, 3vw, 1.3em);
   color: var(--accent);
-  margin-bottom: 0.3em;
+  margin-bottom: 3.5em;
   line-height: 1.4;
 }
 
@@ -637,101 +637,5 @@ body {
 
   50% {
     box-shadow: 0 15px 40px rgba(255, 215, 0, 0.7), 0 0 70px rgba(255, 215, 0, 0.5);
-  }
-}
-
-/* ===== Tagline Glitch Effect ===== */
-.tagline {
-  position: relative;
-  font-weight: 900;
-  /* keep responsive size from earlier rules */
-  color: var(--text-light);
-  overflow: visible;
-}
-
-.tagline::before,
-.tagline::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  overflow: hidden;
-  opacity: 0.85;
-  pointer-events: none;
-}
-
-.tagline::before {
-  left: 2px;
-  text-shadow: -2px 0 #f0f;
-  color: #fff;
-  mix-blend-mode: screen;
-}
-
-.tagline::after {
-  left: -2px;
-  text-shadow: 2px 0 #0ff;
-  color: #fff;
-  mix-blend-mode: screen;
-}
-
-.tagline.glitch {
-  animation: glitch 3s infinite;
-}
-
-@keyframes glitch {
-  0% {
-    transform: none;
-  }
-
-  10% {
-    transform: translateX(-2px) skewX(-0.5deg);
-  }
-
-  20% {
-    transform: translateX(2px) skewX(0.5deg);
-  }
-
-  30% {
-    transform: translateX(-1px);
-  }
-
-  40% {
-    transform: translateX(1px);
-  }
-
-  50% {
-    transform: none;
-  }
-
-  60% {
-    transform: translateX(1px);
-  }
-
-  70% {
-    transform: translateX(-1px);
-  }
-
-  80% {
-    transform: translateX(2px);
-  }
-
-  90% {
-    transform: translateX(-2px);
-  }
-
-  100% {
-    transform: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .tagline.glitch {
-    animation: none;
-  }
-
-  .tagline::before,
-  .tagline::after {
-    display: none;
   }
 }
